@@ -8,3 +8,17 @@ npm install -D prisma
 npm install @prisma/client
 npx prisma init
 ```
+
+## Prisma
+
+### Change schema.prisma and make migration
+
+```bash
+npx prisma migrate dev
+```
+
+### Open prisma studio
+
+```bash
+npx prisma studio
+```
