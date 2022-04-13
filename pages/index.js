@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-
+import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -33,7 +33,12 @@ export default function Home({ data }) {
       <main className={styles.main}>
         <ul className={styles.movielist}>
           {movies.map((item) => (
-            <li key={item.id}>{item.title}</li>
+            <li key={item.id}>
+              <span>{item.title} - </span>
+              <Link href={`/movies/${item.slug}`}>
+                <a>More about this movie</a>
+              </Link>
+            </li>
           ))}
         </ul>
 
